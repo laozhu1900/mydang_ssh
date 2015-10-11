@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<package name="com.jar.action.product" extends="struts-default" namespace="/product">
+
+
+		<action name="booklist" class="com.jar.action.product.ProductAction"
+			method="getAllByPage">
+			<result name="success">/main/book_list.jsp</result>
+		</action>
+
+		
+		<action name="buy" class="com.jar.action.product.BuyAction"
+			method="buy">
+			<result name="success">/cart/cart_list.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<package name="com.jar.action.user" extends="struts-default" namespace="/user">
+
+		<action name="check_email" class="com.jar.action.user.CheckEmailAction" />
+		
+		<action name="check_nickname" class="com.jar.action.user.CheckNicknameAction" />
+		
+		<action name="check_password" class="com.jar.action.user.CheckPasswordAction" />
+		
+		<action name="check_password1" class="com.jar.action.user.CheckPassword1Action" />
+		
+		<action name="check_ImgCode" class="com.jar.action.user.ImgCodeAction"
+			method="check_ImgCode" />
+		
+		<action name="ImgCode" class="com.jar.action.user.ImgCodeAction" />
+		
+		<action name="register" class="com.jar.action.user.RegisterAction"
+			method="register">
+			<result name="success">verify_form.jsp</result>
+			<result name="error">register_form.jsp</result>
+		</action>
+		
+		
+		<action name="verifyMail" class="com.jar.action.user.VerifyMailAction"
+			method="verifyMail">
+			<result name="success">register_ok.jsp</result>
+			<result name="error">verify_form.jsp</result>
+		</action>
+		
+		
+
+		<action name="login" class="com.jar.action.user.LoginAction" method="login">
+			<result name="success">/main/main.jsp</result>
+			<result name="error">login_form.jsp</result>
+		</action>
+		
+		<action name="logout" class="com.jar.action.user.LogoutAction" method="logout">
+			<result name="success">/main/main.jsp</result>
+		</action>
+		
+
+	</package>
+
+</struts>
